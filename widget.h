@@ -2,6 +2,9 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QPushButton>
+#include <QLabel>
+#include <QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -14,6 +17,15 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+
+private slots:
+    void handleButton();
+
+private:
+    QPushButton *m_button;
+    QLabel *m_label;
+    QVBoxLayout *m_layout;
+    int m_count;
 
 private:
     Ui::Widget *ui;
